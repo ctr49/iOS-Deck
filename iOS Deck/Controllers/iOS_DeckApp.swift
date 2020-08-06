@@ -5,9 +5,13 @@ import SwiftUI
 
 @main
 struct iOS_DeckApp: App {
+    // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) private var phase
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
     }
+
 }
