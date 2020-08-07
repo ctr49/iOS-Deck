@@ -10,6 +10,8 @@ class NextCloud {
         return instance
     }()
     
+    private let avatarPath = getDocumentsDirectory("avatar.png")
+    
     private let nextcloud = NCCommunication.shared
     private let common = NCCommunicationCommon.shared
     
@@ -35,11 +37,22 @@ class NextCloud {
     
     func setupNCCommFromKeychain() {
         if (AuthController.isKeychained) {
-            print("Keychained bb")
-            
             let auth = AuthController.getLoginFromKeychain!
             let user = auth.user
             self.setupNextcloud(server: user.serverURL, login: user.userName, password: auth.password)
+        }
+    }
+    
+    func clearSetup(_ currentUser: User) {
+        common.remove(account: "\(currentUser.serverURL)/\(currentUser.userName)")
+        setupNextcloud(server: currentUser.serverURL, login: "", password: "")
+    }
+    
+    func clearUserAvatar() {
+        do {
+            try FileManager.default.removeItem(atPath: avatarPath)
+        } catch {
+            print("Error removing avatar", error)
         }
     }
     
@@ -50,13 +63,19 @@ class NextCloud {
         })
     }
     
+    
     func downloadAvatar(userID: String) {
-        let filename = getDocumentsDirectory() + "photos/avatar.png"
-        print(filename)
-        nextcloud.downloadAvatar(userID: userID, fileNameLocalPath: filename, size: 200) {
+        nextcloud.downloadAvatar(userID: userID, fileNameLocalPath: avatarPath, size: 200) {
             (account: String, data: Data?, errorCode: Int, errorDescription: String) in
-            print(filename)
-            print("Code: \(errorCode) - \(errorDescription)")
         }
+    }
+    
+    func getBoards(closure: @escaping ([NCCommunicationBoards]) -> Void) {
+        nextcloud.getBoards(completionHandler: {
+            (account: String, boards: [NCCommunicationBoards]?, errorCode: Int, errorDescription: String) in
+            if (errorCode == 0) {
+                closure(boards!)
+            }
+        })
     }
 }

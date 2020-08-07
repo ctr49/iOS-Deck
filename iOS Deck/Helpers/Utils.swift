@@ -10,7 +10,18 @@ import Foundation
 //    return documentPath
 //}
 
-func getDocumentsDirectory() -> String {
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].absoluteString
-    return path
+func getDocumentsDirectory(_ append: String? = nil) -> String {
+//    var path = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
+    var path: URL
+    do {
+        try path = FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        
+        guard let append = append else {
+            return path.path
+        }
+        path = path.appendingPathComponent(append)
+        return path.path
+    } catch {
+        return ""
+    }
 }
