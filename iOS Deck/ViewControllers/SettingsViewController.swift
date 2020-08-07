@@ -18,9 +18,16 @@ class SettingsViewController {
             (userProfile: NCCommunicationUserProfile?) in
             guard let userProfile = userProfile else { return }
             
-            self.nextcloud.downloadAvatar(userID: userProfile.userId)
-            
             closure(userProfile.displayName)
+        }
+    }
+    
+    func logout() {
+        do {
+            try AuthController.logout()
+            print("Logged out.")
+        } catch {
+            print("Logout failed.")
         }
     }
 }

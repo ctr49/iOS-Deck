@@ -10,4 +10,8 @@ class RootViewController {
         let instance = RootViewController()
         return instance
     }()
+    
+    @objc func handleAuthState() {
+        print("AUTH CHANGED")
+    }
 }

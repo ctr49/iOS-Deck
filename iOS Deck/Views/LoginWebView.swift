@@ -8,8 +8,9 @@ import NotificationCenter
 struct LoginWebView: View {
     @State var title: String = ""
     @Binding var loginURL: String
+    @Binding var isPresented: Bool
     
-    @Environment(\.presentationMode) var presentationMode
+//    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -19,12 +20,14 @@ struct LoginWebView: View {
             .navigationBarTitle(title, displayMode: .inline)
             .navigationBarItems(leading:
                 Button("Back") {
-                    presentationMode.wrappedValue.dismiss()
+                    isPresented = false
+//                    presentationMode.wrappedValue.dismiss()
                 }
             )
         }
         .onDisappear() {
-            presentationMode.wrappedValue.dismiss()
+            isPresented = false
+//            presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -34,7 +37,7 @@ struct LoginWebView: View {
         func makeUIViewController(context: Context) -> WebviewController {
             let webviewController = WebviewController()
             
-            let request = URLRequest(url: URL(string: url)!, cachePolicy: .returnCacheDataElseLoad)
+            let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringCacheData)
             
             webviewController.webview.load(request)
             
@@ -42,7 +45,7 @@ struct LoginWebView: View {
         }
         
         func updateUIViewController(_ webviewController: WebviewController, context: Context) {
-            let request = URLRequest(url: URL(string: url)!, cachePolicy: .returnCacheDataElseLoad)
+            let request = URLRequest(url: URL(string: url)!, cachePolicy: .reloadIgnoringCacheData)
             webviewController.webview.load(request)
         }
     }

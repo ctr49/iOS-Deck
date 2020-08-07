@@ -12,6 +12,9 @@
 		11B4C3E424DBCF690073C176 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E324DBCF690073C176 /* RootView.swift */; };
 		11B4C3E624DBD1210073C176 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E524DBD1210073C176 /* RootViewController.swift */; };
 		11B4C3E924DBDC720073C176 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E824DBDC720073C176 /* ButtonStyles.swift */; };
+		11B4C3EB24DC9BA80073C176 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3EA24DC9BA70073C176 /* Notifications.swift */; };
+		11B4C3F824DD23570073C176 /* RefreshScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3F724DD23560073C176 /* RefreshScrollView.swift */; };
+		11B4C3FA24DD2C790073C176 /* BoardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3F924DD2C780073C176 /* BoardsListView.swift */; };
 		11BE96A024DA6C1B002BD03C /* iOS_DeckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE969F24DA6C1B002BD03C /* iOS_DeckApp.swift */; };
 		11BE96A424DA6C1D002BD03C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BE96A324DA6C1D002BD03C /* Assets.xcassets */; };
 		11BE96A724DA6C1D002BD03C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11BE96A624DA6C1D002BD03C /* Preview Assets.xcassets */; };
@@ -38,6 +41,9 @@
 		11B4C3E324DBCF690073C176 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		11B4C3E524DBD1210073C176 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		11B4C3E824DBDC720073C176 /* ButtonStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		11B4C3EA24DC9BA70073C176 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		11B4C3F724DD23560073C176 /* RefreshScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshScrollView.swift; sourceTree = "<group>"; };
+		11B4C3F924DD2C780073C176 /* BoardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardsListView.swift; sourceTree = "<group>"; };
 		11BE969C24DA6C1B002BD03C /* iOS Deck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Deck.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11BE969F24DA6C1B002BD03C /* iOS_DeckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_DeckApp.swift; sourceTree = "<group>"; };
 		11BE96A324DA6C1D002BD03C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -134,10 +140,12 @@
 			children = (
 				11B4C3DB24DB38600073C176 /* LoginView.swift */,
 				11BE96B224DA6CE7002BD03C /* BoardsView.swift */,
+				11B4C3F924DD2C780073C176 /* BoardsListView.swift */,
 				11BE96B824DA6CE8002BD03C /* SettingsView.swift */,
 				11BE96B524DA6CE7002BD03C /* UpcomingView.swift */,
 				11BE96EE24DB047B002BD03C /* LoginWebView.swift */,
 				11B4C3E324DBCF690073C176 /* RootView.swift */,
+				11B4C3F724DD23560073C176 /* RefreshScrollView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -146,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				11BE96C724DA6D25002BD03C /* User.swift */,
+				11B4C3EA24DC9BA70073C176 /* Notifications.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +208,8 @@
 			dependencies = (
 			);
 			name = "iOS Deck";
+			packageProductDependencies = (
+			);
 			productName = "iOS Deck";
 			productReference = 11BE969C24DA6C1B002BD03C /* iOS Deck.app */;
 			productType = "com.apple.product-type.application";
@@ -226,6 +237,8 @@
 				Base,
 			);
 			mainGroup = 11BE969324DA6C1B002BD03C;
+			packageReferences = (
+			);
 			productRefGroup = 11BE969D24DA6C1B002BD03C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -282,10 +295,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11B4C3EB24DC9BA80073C176 /* Notifications.swift in Sources */,
 				11BE96D624DA6D3A002BD03C /* LoginViewController.swift in Sources */,
 				11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */,
 				11B4C3E624DBD1210073C176 /* RootViewController.swift in Sources */,
 				11BE96D824DA6D4E002BD03C /* AuthController.swift in Sources */,
+				11B4C3FA24DD2C790073C176 /* BoardsListView.swift in Sources */,
 				11B4C3E424DBCF690073C176 /* RootView.swift in Sources */,
 				11BE96EF24DB047B002BD03C /* LoginWebView.swift in Sources */,
 				11BE96BD24DA6CE8002BD03C /* UpcomingView.swift in Sources */,
@@ -294,6 +309,7 @@
 				11BE96CE24DA6D30002BD03C /* Utils.swift in Sources */,
 				11BE96D424DA6D3A002BD03C /* BoardsViewModel.swift in Sources */,
 				11B4C3E924DBDC720073C176 /* ButtonStyles.swift in Sources */,
+				11B4C3F824DD23570073C176 /* RefreshScrollView.swift in Sources */,
 				11BE96BA24DA6CE8002BD03C /* BoardsView.swift in Sources */,
 				11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */,
 				11BE96A024DA6C1B002BD03C /* iOS_DeckApp.swift in Sources */,

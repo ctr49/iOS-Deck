@@ -33,22 +33,27 @@ class AuthController {
         }
     }
     
-    class func saveToKeychain(_ user: User, password: String) throws {
+    class func login(_ user: User, password: String) throws {
         try KeychainPasswordItem(service: serviceName, account: user.userName).savePassword(password)
         
         Settings.currentUser = user
-        //    NotificationCenter.default.post(name: .loginStatusChanged, object: nil)
+        NextCloud.shared.downloadAvatar(userID: user.userName)
+        
+        NotificationCenter.default.post(name: .loginStatusChanged, object: nil)
     }
     
-    class func deleteKeychain() throws {
+    class func logout() throws {
         guard let currentUser = Settings.currentUser else {
             return
         }
         
         try KeychainPasswordItem(service: serviceName, account: currentUser.userName).deleteItem()
         
+        NextCloud.shared.clearSetup(currentUser)
+        NextCloud.shared.clearUserAvatar()
         Settings.currentUser = nil
-        // NotificationCenter.default.post(name: .loginStatusChanged, object: nil)
+        
+        NotificationCenter.default.post(name: .loginStatusChanged, object: nil)
     }
     
 }

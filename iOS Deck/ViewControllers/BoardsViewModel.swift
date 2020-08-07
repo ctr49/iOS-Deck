@@ -2,13 +2,16 @@
 // Using Swift 5.0
 
 import Foundation
+import NCCommunication
 
 final class BoardsViewModel: ObservableObject {
-    struct Board: Identifiable {
-        var id = UUID()
-        var name: String
-    }
+    @Published var boards: [NCCommunicationBoards] = []
     
-    @Published var boards = [Board(name: "Nadion"), Board(name: "Hookbuffer"), Board(name: "TVBot")]
+    func updateBoards() {
+        NextCloud.shared.getBoards() {
+            (boards) in
+            self.boards = boards
+        }
+    }
     
 }

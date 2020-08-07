@@ -57,7 +57,7 @@ class LoginViewController {
             // save current user to userDefaults, save username and password to keychain, and give username, password, and serverURL to Nextcloud API instance
             do {
                 Settings.currentUser = user
-                try AuthController.saveToKeychain(user, password: appPassword)
+                try AuthController.login(user, password: appPassword)
                 self.nextcloud.setupNextcloud(server: server, login: loginName, password: appPassword)
             } catch {
                 fatalError("fatal error saving to keychain")
@@ -69,7 +69,7 @@ class LoginViewController {
     func killPollLoop() {
         pollTimer?.invalidate()
         
-        NotificationCenter.default.removeObserver(self)
+//        NotificationCenter.default.removeObserver(self)
     }
     
     func getLoginURLRequest(url: String, closure: @escaping (String, String, String) -> Void) {
