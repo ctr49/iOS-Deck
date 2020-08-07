@@ -43,9 +43,8 @@ class WebviewController: UIViewController {
                 self.progressbar.alpha = 1.0
                 progressbar.setProgress(Float(self.webview.estimatedProgress), animated: true)
             }
-        case "title": // triggers every time a page (after the first one) loads
-            print("pageloaded")
-            NotificationCenter.default.post(name: Notification.Name("pageLoaded"), object: nil)
+        case "title": // triggers every time a page (after the first one) loaded
+            NotificationCenter.default.post(name: .pageLoaded, object: nil)
         default:
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
         }

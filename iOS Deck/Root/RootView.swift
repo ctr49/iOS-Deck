@@ -7,10 +7,7 @@ struct RootView: View {
     @Binding var notLoggedIn: Bool
     
     @State private var selection = 0
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    //    private var viewController = RootViewController.shared
+
     
     var body: some View {
         if (notLoggedIn) {
@@ -18,15 +15,6 @@ struct RootView: View {
         } else {
             Tabs
         }
-        //        ZStack {
-        //            Tabs
-        //        }
-        //        .onAppear() {
-        //            setAuth()
-        //        }
-        //        .fullScreenCover(isPresented: $notLoggedIn, content: {
-        //            LoginView()
-        //        })
     }
     
     private var Tabs: some View {
@@ -58,9 +46,3 @@ struct RootView: View {
         }
     }
 }
-
-//struct RootView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RootView()
-//    }
-//}

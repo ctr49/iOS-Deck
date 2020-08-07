@@ -5,4 +5,5 @@ import Foundation
 
 extension Notification.Name {
   static let loginStatusChanged = Notification.Name("com.cback.auth.changed")
+    static let pageLoaded = Notification.Name("com.cback.webview.pageLoaded")
 }

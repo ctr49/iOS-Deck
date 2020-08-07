@@ -19,15 +19,7 @@ struct SettingsView: View {
         NavigationView {
             VStack {
                 profileSnippit
-                //                HStack {
-                //                    Text("Login to Nextcloud")
-                //                    Spacer()
-                //                    NavigationLink(destination: LoginView()) {
-                //                        Text("Login")
-                //                    }
-                //                }
-                //                .padding(.leading, 10).padding(.trailing, 10)
-                
+    
                 Spacer()
                 
                 Button() {
