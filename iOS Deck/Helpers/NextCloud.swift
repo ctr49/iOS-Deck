@@ -70,11 +70,22 @@ class NextCloud {
         }
     }
     
-    func getBoards(closure: @escaping ([NCCommunicationBoards]) -> Void) {
+    func getBoards(closure: @escaping ([NCCommunicationDeckBoards]) -> Void) {
         nextcloud.getBoards(completionHandler: {
-            (account: String, boards: [NCCommunicationBoards]?, errorCode: Int, errorDescription: String) in
+            (account: String, boards: [NCCommunicationDeckBoards]?, errorCode: Int, errorDescription: String) in
             if (errorCode == 0) {
                 closure(boards!)
+            }
+        })
+    }
+    
+    func getStacks(boardID: Int, closure: @escaping ([NCCommunicationDeckStacks]) -> Void) {
+        nextcloud.getStacks(boardID: boardID, completionHandler: {
+            (account: String, stacks: [NCCommunicationDeckStacks]?, errorCode: Int, errorDescription: String) in
+            if (errorCode == 0) {
+                closure(stacks!)
+            } else {
+                print(errorCode, errorDescription)
             }
         })
     }

@@ -7,7 +7,7 @@ struct RootView: View {
     @Binding var notLoggedIn: Bool
     
     @State private var selection = 0
-
+    
     
     var body: some View {
         if (notLoggedIn) {
@@ -20,13 +20,13 @@ struct RootView: View {
     private var Tabs: some View {
         TabView(selection: $selection) {
             BoardsView()
-            .tabItem {
-                VStack {
-                    Image(systemName: "rectangle.stack.fill")
-                    Text("Boards")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "rectangle.stack.fill")
+                        Text("Boards")
+                    }
                 }
-            }
-            .tag(0)
+                .tag(0)
             UpcommingView()
                 .tabItem {
                     VStack {

@@ -39,8 +39,8 @@ struct RefreshScrollView: UIViewRepresentable {
         }
         
         @objc func handleRefreshControl(sender: UIRefreshControl) {
-            sender.endRefreshing()
             viewModel.updateBoards()
+            sender.endRefreshing()
         }
     }
 }
