@@ -6,6 +6,14 @@ import NCCommunication
 
 final class BoardsViewModel: ObservableObject {
     @Published var boards: [NCCommunicationDeckBoards] = []
+    @Published var selectedStacks: [NCCommunicationDeckStacks] = []
+    
+//    func setSelectedBoard(_ boardID: Int) {
+//        let index = boards.firstIndex { $0.id == boardID }
+//        if (index != nil) {
+//            selectedStacks = boards[index!]
+//        }
+//    }
     
     func updateBoards() {
         NextCloud.shared.getBoards() {
@@ -23,13 +31,10 @@ final class BoardsViewModel: ObservableObject {
     }
     
     func updateStacks(boardID: Int, closure: @escaping ((_ loaded: Bool) -> Void)) {
-        let index = boards.firstIndex { $0.id == boardID }
-        if (index != nil) {
-            NextCloud.shared.getStacks(boardID: boardID) {
-                (stacks) in
-                self.boards[index!].stacks = stacks
-                closure(true)
-            }
+        NextCloud.shared.getStacks(boardID: boardID) {
+            (stacks) in
+            self.selectedStacks = stacks
+            closure(true)
         }
     }
 }

@@ -6,29 +6,38 @@ import NCCommunication
 
 struct BoardView: View {
     @State var board: NCCommunicationDeckBoards
-    var viewModel: BoardsViewModel
+    @ObservedObject var viewModel: BoardsViewModel
     
-    @State private var shouldAnimate = true
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var loading: Bool = true
     
     var body: some View {
         ZStack {
-            ActivityIndicator(shouldAnimate: $shouldAnimate)
-            TabView {
-                ForEach(board.stacks) { stack in
-                    Text(stack.title)
-                    Divider()
+            if (loading) {
+                ActivityIndicator(shouldAnimate: $loading)
+            } else {
+                GeometryReader { geometry in
+                    TabView() {
+                        ForEach(viewModel.selectedStacks) { stack in
+                            StackView(stack: stack, color: Color(Color(hex: "#\(board.color)").uiColor().adjust(by: -10)!), height: geometry.size.height, width: geometry.size.width)
+                        }
+                    }
+                    .tabViewStyle(PageTabViewStyle())
                 }
             }
-            .tabViewStyle(PageTabViewStyle())
         }
         .navigationBarTitle(board.title, displayMode: .inline)
         .navigationBarColor(Color(hex: "#\(board.color)").uiColor().adjust(by: -10))
+        .navigationBarBackButtonHidden(true)
+        .navigationBarItems(leading: Button("Back"){self.presentationMode.wrappedValue.dismiss()})
         .background(Color(hex: "#\(board.color)"))
         .onAppear() {
             viewModel.updateStacks(boardID: board.id) {
                 (loaded) in
                 if (loaded) {
-                    shouldAnimate = false
+                    board.stacks = viewModel.selectedStacks
+                    loading = false
                 }
             }
         }

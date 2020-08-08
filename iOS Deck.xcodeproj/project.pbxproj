@@ -10,6 +10,9 @@
 		118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F324DD3C9200DD0D5F /* BoardView.swift */; };
 		118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F624DD421700DD0D5F /* ActivityIndicator.swift */; };
 		118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */; };
+		118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FA24DE53BE00DD0D5F /* CardView.swift */; };
+		118989FE24DE560E00DD0D5F /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FD24DE560E00DD0D5F /* CardsListView.swift */; };
+		11898A0124DE684C00DD0D5F /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0024DE684C00DD0D5F /* StackView.swift */; };
 		11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DB24DB38600073C176 /* LoginView.swift */; };
 		11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DD24DB42930073C176 /* WebViewController.swift */; };
 		11B4C3E424DBCF690073C176 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E324DBCF690073C176 /* RootView.swift */; };
@@ -41,6 +44,9 @@
 		118989F324DD3C9200DD0D5F /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		118989F624DD421700DD0D5F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		118989FA24DE53BE00DD0D5F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		118989FD24DE560E00DD0D5F /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
+		11898A0024DE684C00DD0D5F /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		11B4C3DB24DB38600073C176 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11B4C3DD24DB42930073C176 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		11B4C3E324DBCF690073C176 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -90,6 +96,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		118989FC24DE53C100DD0D5F /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				118989FA24DE53BE00DD0D5F /* CardView.swift */,
+				118989FD24DE560E00DD0D5F /* CardsListView.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		118989FF24DE681500DD0D5F /* Stacks */ = {
+			isa = PBXGroup;
+			children = (
+				11898A0024DE684C00DD0D5F /* StackView.swift */,
+			);
+			path = Stacks;
+			sourceTree = "<group>";
+		};
 		11B4C3E724DBDC670073C176 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,8 +127,8 @@
 				11B4C3F724DD23560073C176 /* RefreshScrollView.swift */,
 				11BE96B224DA6CE7002BD03C /* BoardsView.swift */,
 				11B4C3F924DD2C780073C176 /* BoardsListView.swift */,
-				11BE96D124DA6D3A002BD03C /* BoardsViewModel.swift */,
 				118989F324DD3C9200DD0D5F /* BoardView.swift */,
+				11BE96D124DA6D3A002BD03C /* BoardsViewModel.swift */,
 			);
 			path = Boards;
 			sourceTree = "<group>";
@@ -181,6 +204,8 @@
 				11B4C3FE24DD32510073C176 /* Root */,
 				11B4C3FC24DD31F00073C176 /* Login */,
 				11B4C3FB24DD31D40073C176 /* Boards */,
+				118989FF24DE681500DD0D5F /* Stacks */,
+				118989FC24DE53C100DD0D5F /* Cards */,
 				11B4C3FF24DD328B0073C176 /* Upcoming */,
 				11B4C3FD24DD323F0073C176 /* Settings */,
 				11B4C3E724DBDC670073C176 /* Styles */,
@@ -343,10 +368,13 @@
 				11BE96EF24DB047B002BD03C /* LoginWebView.swift in Sources */,
 				11BE96BD24DA6CE8002BD03C /* UpcomingView.swift in Sources */,
 				11BE96CF24DA6D30002BD03C /* Settings.swift in Sources */,
+				118989FE24DE560E00DD0D5F /* CardsListView.swift in Sources */,
 				11BE96C024DA6CE8002BD03C /* SettingsView.swift in Sources */,
 				11BE96CE24DA6D30002BD03C /* Utils.swift in Sources */,
 				118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */,
+				11898A0124DE684C00DD0D5F /* StackView.swift in Sources */,
 				118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */,
+				118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */,
 				11BE96D424DA6D3A002BD03C /* BoardsViewModel.swift in Sources */,
 				11B4C3E924DBDC720073C176 /* ButtonStyles.swift in Sources */,
 				11B4C3F824DD23570073C176 /* RefreshScrollView.swift in Sources */,

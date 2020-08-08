@@ -42,7 +42,7 @@ struct LoginView: View {
             .fullScreenCover(isPresented: $showWebView, onDismiss: dismiss) {
                 LoginWebView(title: ncURL, loginURL: $loginURL, isPresented: $showWebView)
                     .onAppear() {
-                        viewController.startPollLoop(endpoint: endpoint, token: token)
+                        viewController.startPageChangeListener(endpoint: endpoint, token: token)
                     }
             }
             .navigationBarTitle("")

@@ -7,17 +7,14 @@ import NCCommunication
 struct BoardsListView: View {
     @ObservedObject var viewModel: BoardsViewModel
     
-    @State private var showingThing: Bool = false
-    
     var body: some View {
         ScrollView {
-            ForEach(viewModel.boards) { board in
-                NavigationLink(destination: BoardView(board: board, viewModel: viewModel)) {
-                    row(forBoard: board)
+                ForEach(viewModel.boards) { board in
+                    NavigationLink(destination: BoardView(board: board, viewModel: viewModel)) {
+                        row(forBoard: board)
+                    }
                 }
-                Divider()
-            }
-            Text("Boards: \(viewModel.boards.count)")
+                Text("Boards: \(viewModel.boards.count)")
         }
         .onAppear() {
             viewModel.updateBoards()
@@ -64,6 +61,13 @@ extension Color {
             blue:  Double(b) / 255,
             opacity: Double(a) / 255
         )
+    }
+    
+    mutating func darker() {
+        guard let color = self.uiColor().adjust(by: -10) else {
+            return
+        }
+        self = Color.init(color)
     }
     
     func uiColor() -> UIColor {
