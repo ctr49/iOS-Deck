@@ -11,7 +11,7 @@ class SettingsViewController {
         return instance
     }()
     
-    let nextcloud = NextCloud.shared
+    let nextcloud = Nextcloud.shared
     
     func getProfileSegmentInfo(closure: @escaping (_ displayName: String) -> Void) {
         nextcloud.getUserProfile() {

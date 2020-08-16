@@ -5,8 +5,7 @@ import UIKit
 import SwiftUI
 
 struct RefreshScrollView: UIViewRepresentable {
-    var width: CGFloat
-    var height: CGFloat
+    var size: CGSize
     
     let viewModel = BoardsViewModel()
     
@@ -16,7 +15,7 @@ struct RefreshScrollView: UIViewRepresentable {
         scrollView.refreshControl?.addTarget(context.coordinator, action: #selector(Coordinator.handleRefreshControl(sender:)), for: .valueChanged)
         
         let refreshVC = UIHostingController(rootView: BoardsListView(viewModel: viewModel))
-        refreshVC.view.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        refreshVC.view.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         
         scrollView.addSubview(refreshVC.view)
         

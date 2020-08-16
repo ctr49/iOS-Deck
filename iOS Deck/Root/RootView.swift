@@ -8,7 +8,6 @@ struct RootView: View {
     
     @State private var selection = 0
     
-    
     var body: some View {
         if (notLoggedIn) {
             LoginView()

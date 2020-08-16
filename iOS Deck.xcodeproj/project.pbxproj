@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */; };
+		1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */; };
+		1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */; };
 		118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F324DD3C9200DD0D5F /* BoardView.swift */; };
 		118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F624DD421700DD0D5F /* ActivityIndicator.swift */; };
 		118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */; };
 		118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FA24DE53BE00DD0D5F /* CardView.swift */; };
-		118989FE24DE560E00DD0D5F /* CardsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FD24DE560E00DD0D5F /* CardsListView.swift */; };
 		11898A0124DE684C00DD0D5F /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0024DE684C00DD0D5F /* StackView.swift */; };
 		11898A0924DE783B00DD0D5F /* stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 11898A0724DE783B00DD0D5F /* stack.png */; };
 		11898A0A24DE783B00DD0D5F /* boards.png in Resources */ = {isa = PBXBuildFile; fileRef = 11898A0824DE783B00DD0D5F /* boards.png */; };
+		11898A0C24E0BE7900DD0D5F /* CardProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */; };
 		11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DB24DB38600073C176 /* LoginView.swift */; };
 		11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DD24DB42930073C176 /* WebViewController.swift */; };
 		11B4C3E424DBCF690073C176 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E324DBCF690073C176 /* RootView.swift */; };
@@ -32,7 +35,7 @@
 		11BE96CD24DA6D30002BD03C /* KeychainPasswordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96C924DA6D30002BD03C /* KeychainPasswordItem.swift */; };
 		11BE96CE24DA6D30002BD03C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96CA24DA6D30002BD03C /* Utils.swift */; };
 		11BE96CF24DA6D30002BD03C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96CB24DA6D30002BD03C /* Settings.swift */; };
-		11BE96D024DA6D30002BD03C /* NextCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96CC24DA6D30002BD03C /* NextCloud.swift */; };
+		11BE96D024DA6D30002BD03C /* Nextcloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96CC24DA6D30002BD03C /* Nextcloud.swift */; };
 		11BE96D424DA6D3A002BD03C /* BoardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96D124DA6D3A002BD03C /* BoardsViewModel.swift */; };
 		11BE96D524DA6D3A002BD03C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96D224DA6D3A002BD03C /* SettingsViewController.swift */; };
 		11BE96D624DA6D3A002BD03C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96D324DA6D3A002BD03C /* LoginViewController.swift */; };
@@ -40,17 +43,22 @@
 		11BE96DA24DA6D89002BD03C /* tmp.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 11BE96D924DA6D89002BD03C /* tmp.xcconfig */; };
 		11BE96DC24DA6D8D002BD03C /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 11BE96DB24DA6D8D002BD03C /* Cartfile */; };
 		11BE96EF24DB047B002BD03C /* LoginWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BE96EE24DB047B002BD03C /* LoginWebView.swift */; };
+		11E2082824E10815003593AE /* StacksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2082724E10815003593AE /* StacksViewModel.swift */; };
+		11E2082A24E1C09D003593AE /* StackListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E2082924E1C09D003593AE /* StackListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+auth.swift"; sourceTree = "<group>"; };
+		1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+user.swift"; sourceTree = "<group>"; };
+		1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+deck.swift"; sourceTree = "<group>"; };
 		118989F324DD3C9200DD0D5F /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		118989F624DD421700DD0D5F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		118989FA24DE53BE00DD0D5F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		118989FD24DE560E00DD0D5F /* CardsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsListView.swift; sourceTree = "<group>"; };
 		11898A0024DE684C00DD0D5F /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		11898A0724DE783B00DD0D5F /* stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.png; sourceTree = "<group>"; };
 		11898A0824DE783B00DD0D5F /* boards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boards.png; sourceTree = "<group>"; };
+		11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProviderModel.swift; sourceTree = "<group>"; };
 		11B4C3DB24DB38600073C176 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11B4C3DD24DB42930073C176 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		11B4C3E324DBCF690073C176 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -70,7 +78,7 @@
 		11BE96C924DA6D30002BD03C /* KeychainPasswordItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainPasswordItem.swift; sourceTree = "<group>"; };
 		11BE96CA24DA6D30002BD03C /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		11BE96CB24DA6D30002BD03C /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		11BE96CC24DA6D30002BD03C /* NextCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextCloud.swift; sourceTree = "<group>"; };
+		11BE96CC24DA6D30002BD03C /* Nextcloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nextcloud.swift; sourceTree = "<group>"; };
 		11BE96D124DA6D3A002BD03C /* BoardsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardsViewModel.swift; sourceTree = "<group>"; };
 		11BE96D224DA6D3A002BD03C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		11BE96D324DA6D3A002BD03C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +86,8 @@
 		11BE96D924DA6D89002BD03C /* tmp.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = tmp.xcconfig; sourceTree = "<group>"; };
 		11BE96DB24DA6D8D002BD03C /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		11BE96EE24DB047B002BD03C /* LoginWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebView.swift; sourceTree = "<group>"; };
+		11E2082724E10815003593AE /* StacksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StacksViewModel.swift; sourceTree = "<group>"; };
+		11E2082924E1C09D003593AE /* StackListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +101,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1153B21B24E8F55300DF821B /* Nextcloud */ = {
+			isa = PBXGroup;
+			children = (
+				11BE96CC24DA6D30002BD03C /* Nextcloud.swift */,
+				1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */,
+				1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */,
+				1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */,
+			);
+			path = Nextcloud;
+			sourceTree = "<group>";
+		};
 		118989F524DD41B600DD0D5F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -104,7 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				118989FA24DE53BE00DD0D5F /* CardView.swift */,
-				118989FD24DE560E00DD0D5F /* CardsListView.swift */,
+				11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -113,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				11898A0024DE684C00DD0D5F /* StackView.swift */,
+				11E2082724E10815003593AE /* StacksViewModel.swift */,
+				11E2082924E1C09D003593AE /* StackListView.swift */,
 			);
 			path = Stacks;
 			sourceTree = "<group>";
@@ -140,8 +163,8 @@
 				11B4C3F724DD23560073C176 /* RefreshScrollView.swift */,
 				11BE96B224DA6CE7002BD03C /* BoardsView.swift */,
 				11B4C3F924DD2C780073C176 /* BoardsListView.swift */,
-				118989F324DD3C9200DD0D5F /* BoardView.swift */,
 				11BE96D124DA6D3A002BD03C /* BoardsViewModel.swift */,
+				118989F324DD3C9200DD0D5F /* BoardView.swift */,
 			);
 			path = Boards;
 			sourceTree = "<group>";
@@ -213,6 +236,7 @@
 		11BE969E24DA6C1B002BD03C /* iOS Deck */ = {
 			isa = PBXGroup;
 			children = (
+				1153B21B24E8F55300DF821B /* Nextcloud */,
 				118989F524DD41B600DD0D5F /* Views */,
 				11BE96C224DA6CFC002BD03C /* Models */,
 				11B4C3FE24DD32510073C176 /* Root */,
@@ -261,7 +285,6 @@
 			isa = PBXGroup;
 			children = (
 				11BE96C924DA6D30002BD03C /* KeychainPasswordItem.swift */,
-				11BE96CC24DA6D30002BD03C /* NextCloud.swift */,
 				11BE96CB24DA6D30002BD03C /* Settings.swift */,
 				11BE96CA24DA6D30002BD03C /* Utils.swift */,
 			);
@@ -377,28 +400,33 @@
 				11B4C3EB24DC9BA80073C176 /* Notifications.swift in Sources */,
 				11BE96D624DA6D3A002BD03C /* LoginViewController.swift in Sources */,
 				118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */,
+				1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */,
 				11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */,
 				11BE96D824DA6D4E002BD03C /* AuthController.swift in Sources */,
 				11B4C3FA24DD2C790073C176 /* BoardsListView.swift in Sources */,
+				1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */,
 				11B4C3E424DBCF690073C176 /* RootView.swift in Sources */,
 				11BE96EF24DB047B002BD03C /* LoginWebView.swift in Sources */,
+				11898A0C24E0BE7900DD0D5F /* CardProviderModel.swift in Sources */,
 				11BE96BD24DA6CE8002BD03C /* UpcomingView.swift in Sources */,
 				11BE96CF24DA6D30002BD03C /* Settings.swift in Sources */,
-				118989FE24DE560E00DD0D5F /* CardsListView.swift in Sources */,
 				11BE96C024DA6CE8002BD03C /* SettingsView.swift in Sources */,
 				11BE96CE24DA6D30002BD03C /* Utils.swift in Sources */,
 				118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */,
+				11E2082A24E1C09D003593AE /* StackListView.swift in Sources */,
 				11898A0124DE684C00DD0D5F /* StackView.swift in Sources */,
 				118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */,
 				118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */,
+				11E2082824E10815003593AE /* StacksViewModel.swift in Sources */,
 				11BE96D424DA6D3A002BD03C /* BoardsViewModel.swift in Sources */,
 				11B4C3E924DBDC720073C176 /* ButtonStyles.swift in Sources */,
 				11B4C3F824DD23570073C176 /* RefreshScrollView.swift in Sources */,
+				1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */,
 				11BE96BA24DA6CE8002BD03C /* BoardsView.swift in Sources */,
 				11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */,
 				11BE96A024DA6C1B002BD03C /* iOS_DeckApp.swift in Sources */,
 				11BE96D524DA6D3A002BD03C /* SettingsViewController.swift in Sources */,
-				11BE96D024DA6D30002BD03C /* NextCloud.swift in Sources */,
+				11BE96D024DA6D30002BD03C /* Nextcloud.swift in Sources */,
 				11BE96C824DA6D25002BD03C /* User.swift in Sources */,
 				11BE96CD24DA6D30002BD03C /* KeychainPasswordItem.swift in Sources */,
 			);

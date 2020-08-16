@@ -10,7 +10,7 @@ struct iOS_DeckApp: App {
     
     @State var notLoggedIn: Bool = false
     
-    private var nextcloud = NextCloud.shared
+    private var nextcloud = Nextcloud.shared
     
     var body: some Scene {
         WindowGroup {

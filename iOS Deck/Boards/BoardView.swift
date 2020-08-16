@@ -13,31 +13,50 @@ struct BoardView: View {
     @State private var loading: Bool = true
     
     var body: some View {
-        ZStack {
-            if (loading) {
-                ActivityIndicator(shouldAnimate: $loading)
-            } else {
-                GeometryReader { geometry in
-                    TabView() {
-                        ForEach(viewModel.selectedStacks) { stack in
-                            StackView(stack: stack, color: Color(Color(hex: "#\(board.color)").uiColor().adjust(by: -10)!), height: geometry.size.height, width: geometry.size.width)
+        let boardColor = Color(Color(hex: "#\(board.color)").uiColor().adjust(by: -10)!)
+        GeometryReader {
+            geo in
+            ZStack {
+                if (loading) {
+                    ActivityIndicator(shouldAnimate: $loading)
+                } else {
+                    if (viewModel.stackModel == nil) {
+                        Text("No Stacks here squad fam")
+                    } else {
+                        GeometryReader { geometry in
+                            TabView() {
+                                ForEach(viewModel.stackModel!.stacks.indices) { index in
+                                    StackView(index: index, viewModel: viewModel.stackModel!, color: boardColor, size: geometry.size)
+                                }
+                            }
+                            .tabViewStyle(PageTabViewStyle())
                         }
                     }
-                    .tabViewStyle(PageTabViewStyle())
                 }
             }
-        }
-        .navigationBarTitle(board.title, displayMode: .inline)
-        .navigationBarColor(Color(hex: "#\(board.color)").uiColor().adjust(by: -10))
-        .navigationBarBackButtonHidden(true)
-        .navigationBarItems(leading: Button("Back"){self.presentationMode.wrappedValue.dismiss()})
-        .background(Color(hex: "#\(board.color)"))
-        .onAppear() {
-            viewModel.updateStacks(boardID: board.id) {
-                (loaded) in
-                if (loaded) {
-                    board.stacks = viewModel.selectedStacks
-                    loading = false
+            .frame(width: geo.size.width, height: geo.size.height)
+            .background(Color(hex: "#\(board.color)"))
+            .navigationBarTitle(board.title, displayMode: .inline)
+            .navigationBarColor(Color(hex: "#\(board.color)").uiColor().adjust(by: -10))
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button("Back"){self.presentationMode.wrappedValue.dismiss()}, trailing:
+                                    Button(){
+                                        loading = true
+                                        viewModel.updateStacks(boardID: board.id) {
+                                            (loaded) in
+                                            if (loaded) {
+                                                loading = false
+                                            }
+                                        }
+                                    } label: {
+                                        Image(systemName: "arrow.clockwise")
+                                    })
+            .onAppear() {
+                viewModel.updateStacks(boardID: board.id) {
+                    (loaded) in
+                    if (loaded) {
+                        loading = false
+                    }
                 }
             }
         }

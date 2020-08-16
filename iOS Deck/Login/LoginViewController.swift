@@ -23,7 +23,7 @@ class LoginViewController {
     
     @objc private func pollAppPassword() {
         // call out to the endpoint and check if the token has been authenticated
-        NextCloud.shared.pollAppPassword(endpoint: self.endpoint, token: self.token) {
+        Nextcloud.shared.pollAppPassword(endpoint: self.endpoint, token: self.token) {
             (server, loginName, appPassword) in
             
             guard let server = server else { return }
@@ -36,7 +36,7 @@ class LoginViewController {
             do {
                 Settings.currentUser = user
                 try AuthController.login(user, password: appPassword)
-                NextCloud.shared.setupNextcloud(server: server, login: loginName, password: appPassword)
+                Nextcloud.shared.setupNextcloud(server: server, login: loginName, password: appPassword)
             } catch {
                 fatalError("fatal error saving to keychain")
             }
@@ -50,7 +50,7 @@ class LoginViewController {
     }
     
     func getLoginURLRequest(url: String, closure: @escaping (String, String, String) -> Void) {
-        NextCloud.shared.getLoginRequestURL(url: url) {
+        Nextcloud.shared.getLoginRequestURL(url: url) {
             (loginURL, token, endpoint) in
             guard let loginURL = loginURL else { return }
             guard let token = token else { return }

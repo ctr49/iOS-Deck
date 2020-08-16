@@ -3,14 +3,16 @@
 
 import SwiftUI
 import NCCommunication
+import MobileCoreServices
 
 struct StackView: View {
-    @State var stack: NCCommunicationDeckStacks
+    @State var index: Int
+    @ObservedObject var viewModel: StacksViewModel
     @State var color: Color
-    @State var height: CGFloat
-    @State var width: CGFloat
+    @State var size: CGSize
     
     var body: some View {
+        let stack = viewModel.stacks[index]
         ZStack {
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(color)
@@ -22,9 +24,21 @@ struct StackView: View {
                 .padding(.leading, 10)
                 .padding(.top, 10)
                 Divider()
-                CardsListView(cards: stack.cards)
+                    .background(Color.white)
+                
+                if (stack.cards == nil) {
+                    Text("No cards in this stack.")
+                    Spacer()
+                } else {
+                    StackListView(stack: viewModel.stacks[index], viewModel: viewModel)
+                        .padding(.bottom, 0)
+                }
+                
+                Divider()
+                    .background(Color.white)
+                    .padding(.bottom, 20)
             }
         }
-        .frame(width: width - 40, height: height - 30)
+        .frame(maxWidth: (size.width - 35), minHeight: 0, idealHeight: 0, maxHeight: (size.height - 30))
     }
 }

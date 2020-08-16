@@ -37,7 +37,7 @@ class AuthController {
         try KeychainPasswordItem(service: serviceName, account: user.userName).savePassword(password)
         
         Settings.currentUser = user
-        NextCloud.shared.downloadAvatar(userID: user.userName)
+        Nextcloud.shared.downloadAvatar(userID: user.userName)
         
         NotificationCenter.default.post(name: .loginStatusChanged, object: nil)
     }
@@ -49,8 +49,8 @@ class AuthController {
         
         try KeychainPasswordItem(service: serviceName, account: currentUser.userName).deleteItem()
         
-        NextCloud.shared.clearSetup(currentUser)
-        NextCloud.shared.clearUserAvatar()
+        Nextcloud.shared.clearSetup(currentUser)
+        Nextcloud.shared.clearUserAvatar()
         Settings.currentUser = nil
         
         NotificationCenter.default.post(name: .loginStatusChanged, object: nil)

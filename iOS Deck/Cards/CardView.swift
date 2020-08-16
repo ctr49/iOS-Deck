@@ -3,33 +3,49 @@
 
 import SwiftUI
 import NCCommunication
+import MobileCoreServices
 
 struct CardView: View {
-    @State var card: NCCommunicationDeckCards
+    var card: NCCommunicationDeckCards
+    
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
+            RoundedRectangle(cornerRadius: 5, style: .continuous)
                 .fill(Color.init(hex: "#181a1b"))
-            Group {
-                VStack(alignment: .leading) {
-                    Text(card.title)
-                        .padding(.horizontal, 5)
-                        .padding(.top, 5)
-                    HStack {
-                        Spacer()
-                        Button() {
-                            print("cog")
-                        } label: {
-                            Image(systemName: "gear")
-                                .foregroundColor(Color.white)
-                        }
-                    }
-                    .padding(5)
+            VStack(alignment: .leading) {
+                HStack {
+                    Spacer()
                 }
+                .padding(0)
+                Text(card.title)
+                    .foregroundColor(Color.white)
+                    .padding(.horizontal, 5)
+                VStack {
+                    if (card.desc != "") {
+                        HStack {
+                            Image(systemName: "text.justifyleft")
+                            Spacer()
+                        }
+                        .padding(.bottom, 2)
+                    }
+                    if (card.labels.count > 0) {
+                        HStack {
+                            ForEach(card.labels) {
+                                label in
+                                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                    .fill(Color.init(hex: "#\(label.color)"))
+                                    .frame(height: 5)
+                            }
+                        }
+                        .padding(.bottom, 2)
+                    }
+                }
+                .padding(.horizontal, 5)
+                .padding(.vertical, 3)
             }
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 1)
+        .padding(.vertical, 3)
+        .padding(.horizontal, 5)
     }
 }

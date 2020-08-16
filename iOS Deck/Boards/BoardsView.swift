@@ -7,7 +7,7 @@ struct BoardsView: View {
     var body: some View {
         GeometryReader { geometry in
             NavigationView {
-                RefreshScrollView(width: geometry.size.width, height: geometry.size.height)
+                RefreshScrollView(size: geometry.size)
                     .navigationBarTitle("Boards", displayMode: .automatic)
                     .navigationBarItems(leading:
                                             Button() {
