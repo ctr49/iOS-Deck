@@ -11,6 +11,7 @@
 		110E937124ED660B00079C8C /* boards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936E24ED660A00079C8C /* boards.PNG */; };
 		110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936F24ED660B00079C8C /* stack.w.cards.PNG */; };
 		110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E937024ED660B00079C8C /* stack.wo.cards.PNG */; };
+		110E937624EDE72300079C8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 110E937524EDE72300079C8C /* Icon.png */; };
 		1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */; };
 		1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */; };
 		1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */; };
@@ -56,6 +57,7 @@
 		110E936E24ED660A00079C8C /* boards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boards.PNG; sourceTree = "<group>"; };
 		110E936F24ED660B00079C8C /* stack.w.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.w.cards.PNG; sourceTree = "<group>"; };
 		110E937024ED660B00079C8C /* stack.wo.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.wo.cards.PNG; sourceTree = "<group>"; };
+		110E937524EDE72300079C8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+auth.swift"; sourceTree = "<group>"; };
 		1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+user.swift"; sourceTree = "<group>"; };
 		1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+deck.swift"; sourceTree = "<group>"; };
@@ -109,6 +111,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		110E937424EDE70B00079C8C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				110E937524EDE72300079C8C /* Icon.png */,
+				11898A0224DE77ED00DD0D5F /* Screenshots */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1153B21B24E8F55300DF821B /* Nextcloud */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,10 +239,10 @@
 		11BE969324DA6C1B002BD03C = {
 			isa = PBXGroup;
 			children = (
+				110E937424EDE70B00079C8C /* Assets */,
 				11BE96D924DA6D89002BD03C /* tmp.xcconfig */,
 				11BE96DB24DA6D8D002BD03C /* Cartfile */,
 				11BE969E24DA6C1B002BD03C /* iOS Deck */,
-				11898A0224DE77ED00DD0D5F /* Screenshots */,
 				11BE969D24DA6C1B002BD03C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -369,6 +380,7 @@
 				11BE96DA24DA6D89002BD03C /* tmp.xcconfig in Resources */,
 				110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */,
 				110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */,
+				110E937624EDE72300079C8C /* Icon.png in Resources */,
 				11BE96A724DA6C1D002BD03C /* Preview Assets.xcassets in Resources */,
 				11BE96DC24DA6D8D002BD03C /* Cartfile in Resources */,
 				11BE96A424DA6C1D002BD03C /* Assets.xcassets in Resources */,
