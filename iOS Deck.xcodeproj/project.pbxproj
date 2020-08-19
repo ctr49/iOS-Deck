@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		110E936D24ECB91400079C8C /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E936C24ECB91400079C8C /* SyncManager.swift */; };
+		110E937124ED660B00079C8C /* boards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936E24ED660A00079C8C /* boards.PNG */; };
+		110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936F24ED660B00079C8C /* stack.w.cards.PNG */; };
+		110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E937024ED660B00079C8C /* stack.wo.cards.PNG */; };
 		1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */; };
 		1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */; };
 		1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */; };
@@ -18,8 +21,6 @@
 		118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */; };
 		118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FA24DE53BE00DD0D5F /* CardView.swift */; };
 		11898A0124DE684C00DD0D5F /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0024DE684C00DD0D5F /* StackView.swift */; };
-		11898A0924DE783B00DD0D5F /* stack.png in Resources */ = {isa = PBXBuildFile; fileRef = 11898A0724DE783B00DD0D5F /* stack.png */; };
-		11898A0A24DE783B00DD0D5F /* boards.png in Resources */ = {isa = PBXBuildFile; fileRef = 11898A0824DE783B00DD0D5F /* boards.png */; };
 		11898A0C24E0BE7900DD0D5F /* CardProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */; };
 		11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DB24DB38600073C176 /* LoginView.swift */; };
 		11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DD24DB42930073C176 /* WebViewController.swift */; };
@@ -52,6 +53,9 @@
 
 /* Begin PBXFileReference section */
 		110E936C24ECB91400079C8C /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
+		110E936E24ED660A00079C8C /* boards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boards.PNG; sourceTree = "<group>"; };
+		110E936F24ED660B00079C8C /* stack.w.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.w.cards.PNG; sourceTree = "<group>"; };
+		110E937024ED660B00079C8C /* stack.wo.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.wo.cards.PNG; sourceTree = "<group>"; };
 		1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+auth.swift"; sourceTree = "<group>"; };
 		1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+user.swift"; sourceTree = "<group>"; };
 		1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+deck.swift"; sourceTree = "<group>"; };
@@ -62,8 +66,6 @@
 		118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 		118989FA24DE53BE00DD0D5F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		11898A0024DE684C00DD0D5F /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
-		11898A0724DE783B00DD0D5F /* stack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.png; sourceTree = "<group>"; };
-		11898A0824DE783B00DD0D5F /* boards.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boards.png; sourceTree = "<group>"; };
 		11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProviderModel.swift; sourceTree = "<group>"; };
 		11B4C3DB24DB38600073C176 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11B4C3DD24DB42930073C176 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -149,8 +151,9 @@
 		11898A0224DE77ED00DD0D5F /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				11898A0824DE783B00DD0D5F /* boards.png */,
-				11898A0724DE783B00DD0D5F /* stack.png */,
+				110E936E24ED660A00079C8C /* boards.PNG */,
+				110E936F24ED660B00079C8C /* stack.w.cards.PNG */,
+				110E937024ED660B00079C8C /* stack.wo.cards.PNG */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -362,10 +365,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11898A0A24DE783B00DD0D5F /* boards.png in Resources */,
+				110E937124ED660B00079C8C /* boards.PNG in Resources */,
 				11BE96DA24DA6D89002BD03C /* tmp.xcconfig in Resources */,
+				110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */,
+				110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */,
 				11BE96A724DA6C1D002BD03C /* Preview Assets.xcassets in Resources */,
-				11898A0924DE783B00DD0D5F /* stack.png in Resources */,
 				11BE96DC24DA6D8D002BD03C /* Cartfile in Resources */,
 				11BE96A424DA6C1D002BD03C /* Assets.xcassets in Resources */,
 			);
