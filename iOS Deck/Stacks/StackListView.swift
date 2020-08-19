@@ -10,8 +10,17 @@ struct StackListView: UIViewRepresentable {
     @ObservedObject var viewModel: StacksViewModel
     
     func makeUIView(context: Context) -> UITableView {
-        print("Make UI View")
         let tableView = UITableView(frame: .zero, style: .plain)
+        
+        if (viewModel.getStackByID(stack.id).cards?.count ?? 0 == 0) {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+            label.center = CGPoint(x: 160, y: 285)
+            label.textAlignment = .center
+            label.text = "This stack is empty."
+            tableView.backgroundView = label
+        } else {
+            tableView.backgroundView = nil
+        }
         
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
@@ -23,10 +32,25 @@ struct StackListView: UIViewRepresentable {
         tableView.dataSource = context.coordinator
         tableView.delegate = context.coordinator
         tableView.register(HostingCell.self, forCellReuseIdentifier: "Cell")
+        tableView.layoutIfNeeded()
         return tableView
     }
     
-    func updateUIView(_ uiView: UITableView, context: Context) { }
+    func updateUIView(_ uiView: UITableView, context: Context) {
+        uiView.layoutIfNeeded()
+        uiView.beginUpdates()
+        uiView.endUpdates()
+        
+        if (viewModel.getStackByID(stack.id).cards?.count ?? 0 == 0) {
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+            label.center = CGPoint(x: 160, y: 285)
+            label.textAlignment = .center
+            label.text = "This stack is empty."
+            uiView.backgroundView = label
+        } else {
+            uiView.backgroundView = nil
+        }
+    }
     
     func makeCoordinator() -> StackCoordinator {
         var stackSorted = stack
@@ -138,7 +162,7 @@ extension StackCoordinator: UITableViewDropDelegate, UIDropInteractionDelegate {
                         updatedIndexPaths = []
                     }
                     tableView.beginUpdates()
-                    self.viewModel.moveCardInStack(card, self.stack.id, sourceIndex: sourceIndexPath.row, destIndex: destinationIndexPath.row)
+                    self.viewModel.moveCardInStack(card, sourceIndex: sourceIndexPath.row, destIndex: destinationIndexPath.row)
                     tableView.reloadRows(at: updatedIndexPaths, with: .automatic)
                     tableView.endUpdates()
                     break

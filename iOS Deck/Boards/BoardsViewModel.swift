@@ -8,10 +8,15 @@ final class BoardsViewModel: ObservableObject {
     @Published var boards: [NCCommunicationDeckBoards] = []
     @Published var stackModel: StacksViewModel? = nil
     
+    init() {
+        self.boards = DataManager().getBoards()
+    }
+    
     func updateBoards() {
         Nextcloud.shared.getBoards() {
             (boards) in
             self.boards = boards
+            DataManager().setBoards(boards)
         }
     }
     
@@ -19,6 +24,7 @@ final class BoardsViewModel: ObservableObject {
         Nextcloud.shared.getBoards() {
             (boards) in
             self.boards = boards
+            DataManager().setBoards(boards)
             closure(true)
         }
     }
@@ -26,7 +32,8 @@ final class BoardsViewModel: ObservableObject {
     func updateStacks(boardID: Int, closure: @escaping ((_ loaded: Bool) -> Void)) {
         Nextcloud.shared.getStacks(boardID: boardID) {
             (stacks) in
-            self.stackModel = StacksViewModel(stacks)
+            self.stackModel!.stacks = stacks
+            DataManager().setStacks(stacks)
             closure(true)
         }
     }

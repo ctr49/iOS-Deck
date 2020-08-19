@@ -8,44 +8,41 @@ import MobileCoreServices
 struct CardView: View {
     var card: NCCommunicationDeckCards
     
-    
     var body: some View {
+        let hasLabels: Bool = card.labels?.count ?? 0 > 0
+        let hasDescription: Bool = card.desc != ""
+        let labelPadding: CGFloat = (hasDescription) ? -4 : 4
+        
         ZStack {
             RoundedRectangle(cornerRadius: 5, style: .continuous)
                 .fill(Color.init(hex: "#181a1b"))
             VStack(alignment: .leading) {
-                HStack {
-                    Spacer()
-                }
-                .padding(0)
                 Text(card.title)
                     .foregroundColor(Color.white)
                     .padding(.horizontal, 5)
-                VStack {
-                    if (card.desc != "") {
-                        HStack {
-                            Image(systemName: "text.justifyleft")
-                            Spacer()
-                        }
-                        .padding(.bottom, 2)
+                    .padding(.top, 3)
+                Spacer()
+                HStack {
+                    if (hasDescription) {
+                        Image(systemName: "text.justifyleft")
+                            .padding(.bottom, 4)
                     }
-                    if (card.labels.count > 0) {
-                        HStack {
-                            ForEach(card.labels) {
-                                label in
-                                RoundedRectangle(cornerRadius: 4, style: .continuous)
-                                    .fill(Color.init(hex: "#\(label.color)"))
-                                    .frame(height: 5)
-                            }
+                    if (hasLabels) {
+                        ForEach(card.labels ?? []) {
+                            label in
+                            RoundedRectangle(cornerRadius: 4, style: .continuous)
+                                .fill(Color.init(hex: "#\(label.color)"))
+                                .frame(height: 4.5)
+                                .padding(.bottom, labelPadding)
                         }
-                        .padding(.bottom, 2)
+                    } else {
+                        Spacer()
                     }
                 }
                 .padding(.horizontal, 5)
-                .padding(.vertical, 3)
             }
         }
-        .padding(.vertical, 3)
+        .padding(.vertical, 5)
         .padding(.horizontal, 5)
     }
 }

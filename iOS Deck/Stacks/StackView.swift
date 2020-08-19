@@ -6,13 +6,13 @@ import NCCommunication
 import MobileCoreServices
 
 struct StackView: View {
-    @State var index: Int
+    @State var stack: NCCommunicationDeckStacks
     @ObservedObject var viewModel: StacksViewModel
     @State var color: Color
     @State var size: CGSize
     
     var body: some View {
-        let stack = viewModel.stacks[index]
+        let stackIndex = viewModel.stacks.firstIndex(where: { $0.id == stack.id })!
         ZStack {
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .fill(color)
@@ -26,13 +26,15 @@ struct StackView: View {
                 Divider()
                     .background(Color.white)
                 
-                if (stack.cards == nil) {
-                    Text("No cards in this stack.")
-                    Spacer()
-                } else {
-                    StackListView(stack: viewModel.stacks[index], viewModel: viewModel)
-                        .padding(.bottom, 0)
-                }
+//                if (stack.cards == nil) {
+//                    Text("No cards in this stack.")
+//                    Spacer()
+//                } else {
+//                    StackListView(stack: viewModel.stacks[stackIndex], viewModel: viewModel)
+//                        .padding(.bottom, 0)
+//                }
+                StackListView(stack: viewModel.stacks[stackIndex], viewModel: viewModel)
+                    .padding(.bottom, 0)
                 
                 Divider()
                     .background(Color.white)

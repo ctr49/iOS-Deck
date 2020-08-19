@@ -29,6 +29,13 @@ struct SettingsView: View {
                 }
                 .padding(5)
                 .buttonStyle(RoundButtonStyle(bgColor: Color.white, fgColor: Color.black))
+                Button() {
+                    DataManager().resetData().deleteDataFile()
+                } label: {
+                    Text("Reset Cache")
+                }
+                .padding(5)
+                .buttonStyle(RoundButtonStyle(bgColor: Color.white, fgColor: Color.black))
             }
             .onAppear() {
                 getProfileInfo()

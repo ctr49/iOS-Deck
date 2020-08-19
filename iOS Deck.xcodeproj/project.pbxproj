@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110E936D24ECB91400079C8C /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E936C24ECB91400079C8C /* SyncManager.swift */; };
 		1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */; };
 		1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */; };
 		1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */; };
+		1153B22824EB193600DF821B /* CardModelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22724EB193600DF821B /* CardModelExtension.swift */; };
+		1153B22D24EB97D800DF821B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22C24EB97D800DF821B /* DataManager.swift */; };
 		118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F324DD3C9200DD0D5F /* BoardView.swift */; };
 		118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F624DD421700DD0D5F /* ActivityIndicator.swift */; };
 		118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */; };
@@ -48,9 +51,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110E936C24ECB91400079C8C /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+auth.swift"; sourceTree = "<group>"; };
 		1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+user.swift"; sourceTree = "<group>"; };
 		1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+deck.swift"; sourceTree = "<group>"; };
+		1153B22724EB193600DF821B /* CardModelExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModelExtension.swift; sourceTree = "<group>"; };
+		1153B22C24EB97D800DF821B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		118989F324DD3C9200DD0D5F /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		118989F624DD421700DD0D5F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
@@ -210,6 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				11BE96D724DA6D4D002BD03C /* AuthController.swift */,
+				1153B22C24EB97D800DF821B /* DataManager.swift */,
+				110E936C24ECB91400079C8C /* SyncManager.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -277,6 +285,7 @@
 			children = (
 				11BE96C724DA6D25002BD03C /* User.swift */,
 				11B4C3EA24DC9BA70073C176 /* Notifications.swift */,
+				1153B22724EB193600DF821B /* CardModelExtension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -413,6 +422,7 @@
 				11BE96C024DA6CE8002BD03C /* SettingsView.swift in Sources */,
 				11BE96CE24DA6D30002BD03C /* Utils.swift in Sources */,
 				118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */,
+				110E936D24ECB91400079C8C /* SyncManager.swift in Sources */,
 				11E2082A24E1C09D003593AE /* StackListView.swift in Sources */,
 				11898A0124DE684C00DD0D5F /* StackView.swift in Sources */,
 				118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */,
@@ -427,7 +437,9 @@
 				11BE96A024DA6C1B002BD03C /* iOS_DeckApp.swift in Sources */,
 				11BE96D524DA6D3A002BD03C /* SettingsViewController.swift in Sources */,
 				11BE96D024DA6D30002BD03C /* Nextcloud.swift in Sources */,
+				1153B22D24EB97D800DF821B /* DataManager.swift in Sources */,
 				11BE96C824DA6D25002BD03C /* User.swift in Sources */,
+				1153B22824EB193600DF821B /* CardModelExtension.swift in Sources */,
 				11BE96CD24DA6D30002BD03C /* KeychainPasswordItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

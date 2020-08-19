@@ -2,15 +2,13 @@
 // Using Swift 5.0
 
 import SwiftUI
+import CoreData
 
 @main
 struct iOS_DeckApp: App {
-    // @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @Environment(\.scenePhase) private var phase
+    @Environment(\.scenePhase) private var scenePhase
     
     @State var notLoggedIn: Bool = false
-    
-    private var nextcloud = Nextcloud.shared
     
     var body: some Scene {
         WindowGroup {
@@ -22,17 +20,27 @@ struct iOS_DeckApp: App {
                     setAuth()
                 }
         }
+        .onChange(of: scenePhase) { phase in
+            switch phase {
+            case .active:
+                print("active")
+            case .inactive:
+                print("inactive")
+            case .background:
+                print("background")
+//                saveContext()
+            default:
+                print("default")
+            }
+        }
     }
     
     private func setAuth() {
         if (AuthController.isKeychained) {
-            nextcloud.setupNCCommFromKeychain()
+            Nextcloud.shared.setupNCCommFromKeychain()
             self.notLoggedIn = false
-            //presentationMode.wrappedValue.dismiss()
-            print(self.$notLoggedIn)
         } else {
             self.notLoggedIn = true
         }
     }
-    
 }
