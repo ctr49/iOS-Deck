@@ -1,4 +1,4 @@
 github "Alamofire/Alamofire" "5.2.2"
 github "SwiftyJSON/SwiftyJSON" "5.0.0"
-github "cbackas/ios-communication-library" "7f82fdec61ba4a927e77b0e6390045cb31d29edc"
+github "cbackas/ios-communication-library" "8018ceb8bdb0cd9fb1bdaacfcbe0a8ce2268f8e0"
 github "yahoojapan/SwiftyXMLParser" "5.2.0"

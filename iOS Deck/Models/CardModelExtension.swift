@@ -32,3 +32,9 @@ extension NCCommunicationDeckCards: NSItemProviderReading, NSItemProviderWriting
         return [kUTTypeData as String]
     }
 }
+
+extension NCCommunicationDeckCards {
+    static func ==(lhs: NCCommunicationDeckCards, rhs: NCCommunicationDeckCards) -> Bool {
+        return lhs.title == rhs.title && lhs.desc == rhs.desc
+    }
+}

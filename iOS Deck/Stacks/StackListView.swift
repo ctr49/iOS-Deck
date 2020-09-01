@@ -8,6 +8,7 @@ import MobileCoreServices
 struct StackListView: UIViewRepresentable {
     @State var stack: NCCommunicationDeckStacks
     @ObservedObject var viewModel: StacksViewModel
+    @State var permissionToEdit: Bool
     
     func makeUIView(context: Context) -> UITableView {
         let tableView = UITableView(frame: .zero, style: .plain)
@@ -26,20 +27,41 @@ struct StackListView: UIViewRepresentable {
         tableView.backgroundColor = .clear
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dragDelegate = context.coordinator //to drag cell view
-        tableView.dropDelegate = context.coordinator //to drop cell view
-        tableView.dragInteractionEnabled = true
+        tableView.dragDelegate = context.coordinator
+        tableView.dropDelegate = context.coordinator
+        
+        tableView.dragInteractionEnabled = permissionToEdit
+
         tableView.dataSource = context.coordinator
         tableView.delegate = context.coordinator
         tableView.register(HostingCell.self, forCellReuseIdentifier: "Cell")
         tableView.layoutIfNeeded()
+        
         return tableView
     }
     
     func updateUIView(_ uiView: UITableView, context: Context) {
-        uiView.layoutIfNeeded()
         uiView.beginUpdates()
-        uiView.endUpdates()
+        uiView.layoutIfNeeded()
+        
+        // check for changes to the card relavant to the listcarditemview to possibly refresh that row
+        let oldCards = context.coordinator.stack.cards
+        let newCards = viewModel.getStackByID(stack.id).cards
+        var reloadRows: [IndexPath] = []
+        newCards?.enumerated().forEach() {
+            index, newCard in
+            if let oldCard = oldCards?.firstIndex(where: { $0.id == newCard.id }) {
+                ///todo check for label changes or title changes and reload row appropriately
+                if (newCard.desc != oldCards![oldCard].desc) {
+                    reloadRows.append(IndexPath(row: index, section: 0))
+                }
+            }
+        }
+        uiView.reloadRows(at: reloadRows, with: .automatic)
+        // keep whole stack up to date with new data
+        context.coordinator.stack.cards = viewModel.getStackByID(stack.id).cards?.map({ $0.copy() }) as? [NCCommunicationDeckCards]
+        
+        uiView.dragInteractionEnabled = permissionToEdit
         
         if (viewModel.getStackByID(stack.id).cards?.count ?? 0 == 0) {
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -50,6 +72,8 @@ struct StackListView: UIViewRepresentable {
         } else {
             uiView.backgroundView = nil
         }
+        
+        uiView.endUpdates()
     }
     
     func makeCoordinator() -> StackCoordinator {
@@ -59,7 +83,7 @@ struct StackListView: UIViewRepresentable {
     }
 }
 
-class HostingCell: UITableViewCell { // just to hold hosting controller
+class HostingCell: UITableViewCell {
     var host: UIHostingController<AnyView>?
 }
 
@@ -81,7 +105,7 @@ extension StackCoordinator: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let tableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HostingCell
         
-        let view = CardView(card: viewModel.getStackByID(stack.id).cards![indexPath.row])
+        let view = CardListItemView(card: viewModel.getStackByID(stack.id).cards![indexPath.row])
         
         // create & setup hosting controller only once
         if tableViewCell.host == nil {

@@ -48,13 +48,25 @@ class SyncManager {
     public func SyncStackCards(_ stack: NCCommunicationDeckStacks) {
         stack.cards?.forEach() {
             (card) in
-            let queueIndex = queue.firstIndex(where: { $0.cardID == card.id })
-            if (queueIndex != nil) {
-                queue[queueIndex!] = QueuableCard(boardID: stack.boardId, cardID: card.id, card: card)
+            if let queueIndex = queue.firstIndex(where: { $0.cardID == card.id }) {
+                queue[queueIndex] = QueuableCard(boardID: stack.boardId, cardID: card.id, card: card)
             } else {
                 queue.append(QueuableCard(boardID: stack.boardId, cardID: card.id, card: card))
             }
         }
+        
+        if (!looping) {
+            loop()
+        }
+    }
+    
+    public func SyncCard(_ card: NCCommunicationDeckCards, boardID: Int) {
+        if let queueIndex = queue.firstIndex(where: { $0.cardID == card.id }) {
+            queue[queueIndex] = QueuableCard(boardID: boardID, cardID: card.id, card: card)
+        } else {
+            queue.append(QueuableCard(boardID: boardID, cardID: card.id, card: card))
+        }
+        
         if (!looping) {
             loop()
         }

@@ -7,6 +7,7 @@ import MobileCoreServices
 
 struct StackView: View {
     @State var stack: NCCommunicationDeckStacks
+    @State var permissionToEdit: Bool
     @ObservedObject var viewModel: StacksViewModel
     @State var color: Color
     @State var size: CGSize
@@ -26,14 +27,7 @@ struct StackView: View {
                 Divider()
                     .background(Color.white)
                 
-//                if (stack.cards == nil) {
-//                    Text("No cards in this stack.")
-//                    Spacer()
-//                } else {
-//                    StackListView(stack: viewModel.stacks[stackIndex], viewModel: viewModel)
-//                        .padding(.bottom, 0)
-//                }
-                StackListView(stack: viewModel.stacks[stackIndex], viewModel: viewModel)
+                StackListView(stack: viewModel.stacks[stackIndex], viewModel: viewModel, permissionToEdit: permissionToEdit)
                     .padding(.bottom, 0)
                 
                 Divider()

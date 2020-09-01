@@ -27,7 +27,9 @@ struct LoginView: View {
                     Text("Connect to Nextcloud to access your Deck")
                         .foregroundColor(Color.white)
                     TextField("Nextcloud URL", text: $ncURL)
+                        .autocapitalization(.none)
                         .disableAutocorrection(true)
+                        .keyboardType(.URL)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button(action: {
                         self.login()
@@ -65,14 +67,5 @@ struct LoginView: View {
     
     private func dismiss() -> Void {
         presentationMode.wrappedValue.dismiss()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-//
-////            if (AuthController.isKeychained) {
-////                print("Authed")
-////                presentationMode.wrappedValue.dismiss()
-////            } else {
-////                print("not authed")
-////            }
-//        })
     }
 }

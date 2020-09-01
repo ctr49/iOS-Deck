@@ -90,8 +90,6 @@ extension DataManager {
     
     public func getBoards() -> [NCCommunicationDeckBoards] {
         readData()
-        //        let foundBoards = boards
-        //        resetData()
         return boards
     }
     

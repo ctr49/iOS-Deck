@@ -10,8 +10,6 @@ struct LoginWebView: View {
     @Binding var loginURL: String
     @Binding var isPresented: Bool
     
-//    @Environment(\.presentationMode) var presentationMode
-    
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,13 +19,11 @@ struct LoginWebView: View {
             .navigationBarItems(leading:
                 Button("Back") {
                     isPresented = false
-//                    presentationMode.wrappedValue.dismiss()
                 }
             )
         }
         .onDisappear() {
             isPresented = false
-//            presentationMode.wrappedValue.dismiss()
         }
     }
     

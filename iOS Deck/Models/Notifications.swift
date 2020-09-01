@@ -8,4 +8,6 @@ extension Notification.Name {
     static let pageLoaded = Notification.Name("com.cback.webview.pageLoaded")
     static let boardLoaded = Notification.Name("com.cback.board.loaded")
     static let boardsLoaded = Notification.Name("com.cback.boards.loaded")
+    static let cardSelected = Notification.Name("com.cback.card.selected")
+    static let cardUpdated = Notification.Name("com.cback.card.updated")
 }

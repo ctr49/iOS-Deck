@@ -6,6 +6,7 @@ import NCCommunication
 
 final class StacksViewModel: ObservableObject {
     @Published var stacks: [NCCommunicationDeckStacks] = []
+    @Published var board: NCCommunicationDeckBoards? = nil
     
     init(_ stacks: [NCCommunicationDeckStacks]) {
         self.stacks = stacks
@@ -45,7 +46,6 @@ final class StacksViewModel: ObservableObject {
                     stacks[i].cards = [card]
                 }
             }
-            print(stacks[i].cards!)
             setOrders(i)
             
             DataManager().setStack(stacks[i])
@@ -63,15 +63,38 @@ final class StacksViewModel: ObservableObject {
         }
     }
     
+    func updateDescriptionCheckbox(stackID: Int, cardID: Int, _ value: Bool, range: Range<String.Index>) {
+        if let stackIndex = getIndexByStackID(stackID) {
+            if let cardIndex = stacks[stackIndex].cards?.firstIndex(where: { $0.id == cardID }) {
+                stacks[stackIndex].cards![cardIndex].desc.replaceSubrange(range, with: value ? "- [x]" : "- [ ]")
+                
+                DataManager().setStack(stacks[stackIndex])
+                SyncManager.shared.SyncCard(stacks[stackIndex].cards![cardIndex], boardID: stacks[stackIndex].boardId)
+            }
+        }
+    }
+    
+    func getCardIndexesByID(_ cardID: Int) -> (stackIndex: Int, cardIndex: Int)? {
+        let stack = stacks.firstIndex(where: {
+            if ($0.cards != nil) {
+                return ($0.cards!.first(where: { $0.id == cardID }) != nil)
+            }
+            return false
+        })
+        if (stack != nil) {
+            let card = stacks[stack!].cards!.firstIndex(where: { $0.id == cardID })
+            if (card != nil) {
+                return (stack!, card!)
+            }
+        }
+        return nil
+    }
+    
     // updates order for all cards to match index in list
     private func setOrders(_ stackIndex: Int) {
         for (index, card) in stacks[stackIndex].cards!.enumerated() {
             if (index != card.order) { stacks[stackIndex].cards![index].order = index }
         }
-    }
-    
-    func updateStack(_ boardID: Int, _ stackID: Int, _ cardID: Int, title: String, description: String, order: Int, dueDate: Int?) {
-        
     }
     
     private func getIndexByStackID(_ stackID: Int) -> Int? {

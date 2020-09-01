@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,9 +20,12 @@
 		118989F424DD3C9200DD0D5F /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F324DD3C9200DD0D5F /* BoardView.swift */; };
 		118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F624DD421700DD0D5F /* ActivityIndicator.swift */; };
 		118989F924DDF63200DD0D5F /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */; };
-		118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FA24DE53BE00DD0D5F /* CardView.swift */; };
+		118989FB24DE53BE00DD0D5F /* CardListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118989FA24DE53BE00DD0D5F /* CardListItemView.swift */; };
 		11898A0124DE684C00DD0D5F /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0024DE684C00DD0D5F /* StackView.swift */; };
-		11898A0C24E0BE7900DD0D5F /* CardProviderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */; };
+		118F1A0C24EE2D9F00A1301D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F1A0B24EE2D9F00A1301D /* CardView.swift */; };
+		118F1A0F24EECA3800A1301D /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 118F1A0E24EECA3800A1301D /* Introspect */; };
+		118F1A1124EECDB200A1301D /* IntrospectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F1A1024EECDB200A1301D /* IntrospectExtensions.swift */; };
+		118F1A1524F2FDB900A1301D /* DescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118F1A1424F2FDB600A1301D /* DescriptionView.swift */; };
 		11B4C3DC24DB38600073C176 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DB24DB38600073C176 /* LoginView.swift */; };
 		11B4C3DE24DB42930073C176 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3DD24DB42930073C176 /* WebViewController.swift */; };
 		11B4C3E424DBCF690073C176 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B4C3E324DBCF690073C176 /* RootView.swift */; };
@@ -66,9 +69,11 @@
 		118989F324DD3C9200DD0D5F /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		118989F624DD421700DD0D5F /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		118989F824DDF63200DD0D5F /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
-		118989FA24DE53BE00DD0D5F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		118989FA24DE53BE00DD0D5F /* CardListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListItemView.swift; sourceTree = "<group>"; };
 		11898A0024DE684C00DD0D5F /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
-		11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProviderModel.swift; sourceTree = "<group>"; };
+		118F1A0B24EE2D9F00A1301D /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		118F1A1024EECDB200A1301D /* IntrospectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntrospectExtensions.swift; sourceTree = "<group>"; };
+		118F1A1424F2FDB600A1301D /* DescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		11B4C3DB24DB38600073C176 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		11B4C3DD24DB42930073C176 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		11B4C3E324DBCF690073C176 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				118F1A0F24EECA3800A1301D /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,8 +149,9 @@
 		118989FC24DE53C100DD0D5F /* Cards */ = {
 			isa = PBXGroup;
 			children = (
-				118989FA24DE53BE00DD0D5F /* CardView.swift */,
-				11898A0B24E0BE7900DD0D5F /* CardProviderModel.swift */,
+				118989FA24DE53BE00DD0D5F /* CardListItemView.swift */,
+				118F1A0B24EE2D9F00A1301D /* CardView.swift */,
+				118F1A1424F2FDB600A1301D /* DescriptionView.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 				11BE96C924DA6D30002BD03C /* KeychainPasswordItem.swift */,
 				11BE96CB24DA6D30002BD03C /* Settings.swift */,
 				11BE96CA24DA6D30002BD03C /* Utils.swift */,
+				118F1A1024EECDB200A1301D /* IntrospectExtensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 			);
 			name = "iOS Deck";
 			packageProductDependencies = (
+				118F1A0E24EECA3800A1301D /* Introspect */,
 			);
 			productName = "iOS Deck";
 			productReference = 11BE969C24DA6C1B002BD03C /* iOS Deck.app */;
@@ -361,6 +370,7 @@
 			);
 			mainGroup = 11BE969324DA6C1B002BD03C;
 			packageReferences = (
+				118F1A0D24EECA3800A1301D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 11BE969D24DA6C1B002BD03C /* Products */;
 			projectDirPath = "";
@@ -432,7 +442,7 @@
 				1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */,
 				11B4C3E424DBCF690073C176 /* RootView.swift in Sources */,
 				11BE96EF24DB047B002BD03C /* LoginWebView.swift in Sources */,
-				11898A0C24E0BE7900DD0D5F /* CardProviderModel.swift in Sources */,
+				118F1A0C24EE2D9F00A1301D /* CardView.swift in Sources */,
 				11BE96BD24DA6CE8002BD03C /* UpcomingView.swift in Sources */,
 				11BE96CF24DA6D30002BD03C /* Settings.swift in Sources */,
 				11BE96C024DA6CE8002BD03C /* SettingsView.swift in Sources */,
@@ -442,7 +452,9 @@
 				11E2082A24E1C09D003593AE /* StackListView.swift in Sources */,
 				11898A0124DE684C00DD0D5F /* StackView.swift in Sources */,
 				118989F724DD421700DD0D5F /* ActivityIndicator.swift in Sources */,
-				118989FB24DE53BE00DD0D5F /* CardView.swift in Sources */,
+				118F1A1524F2FDB900A1301D /* DescriptionView.swift in Sources */,
+				118F1A1124EECDB200A1301D /* IntrospectExtensions.swift in Sources */,
+				118989FB24DE53BE00DD0D5F /* CardListItemView.swift in Sources */,
 				11E2082824E10815003593AE /* StacksViewModel.swift in Sources */,
 				11BE96D424DA6D3A002BD03C /* BoardsViewModel.swift in Sources */,
 				11B4C3E924DBDC720073C176 /* ButtonStyles.swift in Sources */,
@@ -652,6 +664,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		118F1A0D24EECA3800A1301D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		118F1A0E24EECA3800A1301D /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 118F1A0D24EECA3800A1301D /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 11BE969424DA6C1B002BD03C /* Project object */;
 }
