@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		110E936D24ECB91400079C8C /* SyncManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 110E936C24ECB91400079C8C /* SyncManager.swift */; };
 		110E937124ED660B00079C8C /* boards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936E24ED660A00079C8C /* boards.PNG */; };
-		110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E936F24ED660B00079C8C /* stack.w.cards.PNG */; };
 		110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 110E937024ED660B00079C8C /* stack.wo.cards.PNG */; };
 		110E937624EDE72300079C8C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 110E937524EDE72300079C8C /* Icon.png */; };
+		1144E89B24FEE0090014FC3B /* card.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 1144E89A24FEE0090014FC3B /* card.PNG */; };
 		1153B21D24E8F68D00DF821B /* Nextcloud+auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */; };
 		1153B21F24E8F76F00DF821B /* Nextcloud+user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */; };
 		1153B22124E8F7B500DF821B /* Nextcloud+deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */; };
@@ -58,9 +58,9 @@
 /* Begin PBXFileReference section */
 		110E936C24ECB91400079C8C /* SyncManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncManager.swift; sourceTree = "<group>"; };
 		110E936E24ED660A00079C8C /* boards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boards.PNG; sourceTree = "<group>"; };
-		110E936F24ED660B00079C8C /* stack.w.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.w.cards.PNG; sourceTree = "<group>"; };
 		110E937024ED660B00079C8C /* stack.wo.cards.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stack.wo.cards.PNG; sourceTree = "<group>"; };
 		110E937524EDE72300079C8C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		1144E89A24FEE0090014FC3B /* card.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card.PNG; sourceTree = "<group>"; };
 		1153B21C24E8F68D00DF821B /* Nextcloud+auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+auth.swift"; sourceTree = "<group>"; };
 		1153B21E24E8F76F00DF821B /* Nextcloud+user.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+user.swift"; sourceTree = "<group>"; };
 		1153B22024E8F7B500DF821B /* Nextcloud+deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Nextcloud+deck.swift"; sourceTree = "<group>"; };
@@ -169,8 +169,8 @@
 		11898A0224DE77ED00DD0D5F /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				1144E89A24FEE0090014FC3B /* card.PNG */,
 				110E936E24ED660A00079C8C /* boards.PNG */,
-				110E936F24ED660B00079C8C /* stack.w.cards.PNG */,
 				110E937024ED660B00079C8C /* stack.wo.cards.PNG */,
 			);
 			path = Screenshots;
@@ -387,8 +387,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				110E937124ED660B00079C8C /* boards.PNG in Resources */,
+				1144E89B24FEE0090014FC3B /* card.PNG in Resources */,
 				11BE96DA24DA6D89002BD03C /* tmp.xcconfig in Resources */,
-				110E937224ED660B00079C8C /* stack.w.cards.PNG in Resources */,
 				110E937324ED660B00079C8C /* stack.wo.cards.PNG in Resources */,
 				110E937624EDE72300079C8C /* Icon.png in Resources */,
 				11BE96A724DA6C1D002BD03C /* Preview Assets.xcassets in Resources */,
