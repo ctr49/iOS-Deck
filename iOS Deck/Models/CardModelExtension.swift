@@ -35,6 +35,13 @@ extension NCCommunicationDeckCards: NSItemProviderReading, NSItemProviderWriting
 
 extension NCCommunicationDeckCards {
     static func ==(lhs: NCCommunicationDeckCards, rhs: NCCommunicationDeckCards) -> Bool {
-        return lhs.title == rhs.title && lhs.desc == rhs.desc
+        let title = lhs.title == rhs.title
+        let desc = lhs.desc == rhs.desc
+        let order = lhs.order == rhs.order
+        return title && desc && order
+    }
+    
+    static func !=(lhs: NCCommunicationDeckCards, rhs: NCCommunicationDeckCards) -> Bool {
+        return !(lhs == rhs)
     }
 }
