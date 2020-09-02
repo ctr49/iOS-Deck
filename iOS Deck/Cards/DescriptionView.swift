@@ -37,6 +37,7 @@ struct DescriptionPreview: View {
         .padding(.top, 8)
         .fullScreenCover(isPresented: $showingDescription) {
             // onDismiss
+            viewModel.syncCard(card)
             showingDescription = false
             hideDescriptionPreview = false
         } content: {

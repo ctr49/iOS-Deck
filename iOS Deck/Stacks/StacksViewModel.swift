@@ -67,10 +67,14 @@ final class StacksViewModel: ObservableObject {
         if let stackIndex = getIndexByStackID(stackID) {
             if let cardIndex = stacks[stackIndex].cards?.firstIndex(where: { $0.id == cardID }) {
                 stacks[stackIndex].cards![cardIndex].desc.replaceSubrange(range, with: value ? "- [x]" : "- [ ]")
-                
-                DataManager().setStack(stacks[stackIndex])
-                SyncManager.shared.SyncCard(stacks[stackIndex].cards![cardIndex], boardID: stacks[stackIndex].boardId)
             }
+        }
+    }
+    
+    func syncCard(_ card: NCCommunicationDeckCards) {
+        if let (stackIndex, cardIndex) = getCardIndexesByID(card.id) {
+            DataManager().setStack(stacks[stackIndex])
+            SyncManager.shared.SyncCard(stacks[stackIndex].cards![cardIndex], boardID: stacks[stackIndex].boardId)
         }
     }
     
