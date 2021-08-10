@@ -8,4 +8,4 @@ Utilizes Nextcloud/iOS-Communication-Library (or a fork of it)
 #### Early Screenshots (so wip obviously)
 Boards                     |  Populated Stack              | Card View          |
 :-------------------------:|:-------------------------:|:-------------------------:
-<img src="https://raw.githubusercontent.com/cbackas/iOS-Deck/main/Assets/Screenshots/boards.PNG" width="300" /> | <img src="https://raw.githubusercontent.com/cbackas/iOS-Deck/main/Assets/Screenshots/stack.w.cards.PNG" width="300" /> | <img src="https://raw.githubusercontent.com/cbackas/iOS-Deck/main/Assets/Screenshots/card.PNG" width="300" />
+![Boards](./Assets/Screenshots/boards.PNG "Boards") | ![Populated Stack](./Assets/Screenshots/stack.w.cards.PNG "Populated Stack") | ![Card View](./Assets/Screenshots/card.PNG "Card View") 
